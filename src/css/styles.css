@@ -1,36 +1,41 @@
 :root {
-    /* Cores - Palette Calma e Escura */
-    --bg-color: #121214;
-    --card-bg: #202024;
-    --text-primary: #E1E1E6;
-    --text-secondary: #A8A8B3;
-    --primary-color: #8257E5;
-    /* Roxo suave */
-    --primary-hover: #9466FF;
-    --border-color: #323238;
-    --nav-bg: rgba(32, 32, 36, 0.9);
-    /* Transparencia para blur */
+    /* Cores - Palette Refinada (Source: Stitch PNGs) */
+    --bg-color: #0F1116;
+    /* Darker Navy/Black */
+    --card-bg: #181B21;
+    /* Slightly lighter card */
+    --text-primary: #FFFFF0;
+    --text-secondary: #94A3B8;
+    --primary-color: #2D8CFF;
+    /* Bright Blue */
+    --primary-hover: #1A73E8;
+    --border-color: #2D333B;
+    --nav-bg: rgba(15, 17, 22, 0.85);
 
     /* Espaçamento */
     --spacing-xs: 8px;
     --spacing-sm: 16px;
     --spacing-md: 24px;
     --spacing-lg: 32px;
-    --spacing-xl: 48px;
+    --spacing-xl: 40px;
+    /* Adjusted slightly */
 
     /* Bordas */
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    /* Rounder inputs/cards */
+    --radius-lg: 24px;
+    /* Big card radius */
     --radius-full: 9999px;
 
     /* Tipografia */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-family: 'Inter', -apple-system, sans-serif;
     --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size-md: 16px;
     --font-size-lg: 20px;
-    --font-size-xl: 32px;
+    --font-size-xl: 28px;
+    /* Slightly tighter H1 */
 }
 
 * {
@@ -67,21 +72,30 @@ body.centered-view {
     /* Espaço para a nav fixa */
 }
 
-/* Base Card (Login) */
+/* Base Card (Login/Mobile Container) */
 .card {
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xl) var(--spacing-lg);
-    border: 1px solid var(--border-color);
+    background-color: transparent;
+    /* Cleaner mobile look */
+    border: none;
+    padding: var(--spacing-lg) 0;
+    /* Remove side padding for full mobile width feel, keep vertical */
     text-align: center;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
 }
+
+/* On larger screens, we might want the card back, but strictly mobile-first as per instructions implies full width flow.
+   The 'login.png' shows content floating on dark bg. */
 
 /* Header (Lista & Painel) */
 header {
     margin-bottom: var(--spacing-lg);
     padding-top: var(--spacing-sm);
+    text-align: left;
+    /* Align left as per typical mobile apps, though Login title is centered. */
 }
+
+/* Override header alignment for Login specific if needed, but 'Este espaço' looks centered.
+   We'll keep h1 alignment flexible. */
 
 header h1 {
     font-size: var(--font-size-lg);
@@ -109,12 +123,15 @@ header p {
 .input-main {
     width: 100%;
     padding: var(--spacing-md) var(--spacing-sm);
-    background-color: var(--card-bg);
+    background-color: #1A1D24;
+    /* Darker input bg */
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-full);
+    /* Pill shape like screenshot */
     color: var(--text-primary);
     font-size: var(--font-size-md);
     transition: all 0.2s;
+    padding-left: 20px;
 }
 
 .input-main:focus {
@@ -344,32 +361,41 @@ header p {
     margin-bottom: var(--spacing-xs);
 }
 
+
 .login-page input {
     width: 100%;
     padding: var(--spacing-sm);
-    background-color: var(--bg-color);
+    background-color: #1A1D24;
+    /* Distinct dark field */
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
+    /* Not full pill for form inputs usually, but screenshot has rounded */
     color: var(--text-primary);
     font-size: var(--font-size-md);
+    height: 56px;
+    /* Taller touch targets */
 }
 
 .login-page input:focus {
     outline: none;
     border-color: var(--primary-color);
+    background-color: #20242D;
 }
 
 .login-page .btn-primary {
     width: 100%;
-    padding: var(--spacing-sm);
+    height: 56px;
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
+    /* Pill button */
     font-size: var(--font-size-md);
     font-weight: 600;
     cursor: pointer;
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    box-shadow: 0 4px 12px rgba(45, 140, 255, 0.3);
+    /* Blue glow */
 }
 
 .login-page .link-secondary {
