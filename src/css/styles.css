@@ -87,11 +87,34 @@ body.centered-view {
    The 'login.png' shows content floating on dark bg. */
 
 /* Header (Lista & Painel) */
+/* Header (Lista, Painel & Perfil) */
 header {
     margin-bottom: var(--spacing-lg);
     padding-top: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-content {
     text-align: left;
-    /* Align left as per typical mobile apps, though Login title is centered. */
+}
+
+.profile-icon-link {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    padding: 8px;
+    /* Touch target */
+    margin-right: -8px;
+    /* Optical alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon-link:hover {
+    color: var(--text-primary);
+    /* Neutral hover (White) - Phase 3B Req */
 }
 
 /* Override header alignment for Login specific if needed, but 'Este espaço' looks centered.
