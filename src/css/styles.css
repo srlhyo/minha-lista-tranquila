@@ -221,6 +221,105 @@ header p {
     color: var(--text-primary);
 }
 
+
+/* Dashboard / Painel */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.progress-card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.progress-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    transform: rotate(45deg);
+    /* Mock 75% */
+    /* This is a simple visual hack for a spinner/progress without SVG complex logic for now */
+}
+
+.progress-info {
+    flex: 1;
+}
+
+.progress-title {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.progress-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.memories-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.memory-item {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-md) 0;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.memory-item:last-child {
+    border-bottom: none;
+}
+
+.memory-icon {
+    color: var(--primary-color);
+    opacity: 0.6;
+}
+
 /* Utility for Login Page (keeps it working) */
 .login-page h1 {
     font-size: var(--font-size-xl);
