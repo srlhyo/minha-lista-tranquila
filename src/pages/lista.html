@@ -4,28 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Lista Tranquila - Lista</title>
+    <title>Minha Lista Tranquila</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Incluindo Material Icons para os ícones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        /* Estilo temporário para o placeholder */
-        .empty-state {
-            color: var(--text-secondary);
-            margin-top: var(--spacing-xl);
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="card">
-            <h1>Sua Lista</h1>
-            <p class="subtitle">Um lugar para seus pensamentos.</p>
-            <div class="empty-state">
-                <p>🚧 Fase 1B: Em breve...</p>
+
+        <header>
+            <h1>Minha Lista Tranquila</h1>
+            <p>Sem pressa.</p>
+        </header>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" id="new-item-input" class="input-main" placeholder="O que está na sua cabeça agora?">
             </div>
-            <a href="../index.html" class="link-secondary" style="margin-top: 48px;">Sair</a>
+            <button id="add-btn" class="btn-add" aria-label="Adicionar">
+                <span class="material-icons-round">add</span>
+            </button>
         </div>
+
+        <main>
+            <!-- Seção Agora -->
+            <h2 class="section-title">Agora</h2>
+            <div class="list-group" id="list-now">
+                <!-- Mock Item -->
+                <div class="list-item">Ler 10 páginas de um livro</div>
+            </div>
+
+            <!-- Seção Depois -->
+            <h2 class="section-title">Depois</h2>
+            <div class="list-group" id="list-later">
+                <div class="list-item">Organizar a mesa</div>
+                <div class="list-item">Regar as plantas</div>
+            </div>
+
+            <!-- Seção Feito -->
+            <h2 class="section-title">Feito</h2>
+            <div class="list-group" id="list-done">
+                <div class="list-item" style="opacity: 0.6; text-decoration: line-through;">Responder e-mails</div>
+            </div>
+        </main>
+
     </div>
+
+    <!-- Navegação Inferior -->
+    <nav class="bottom-nav">
+        <div class="nav-content">
+            <a href="lista.html" class="nav-item active">
+                <span class="material-icons-round">list</span>
+                <span>Lista</span>
+            </a>
+            <a href="painel.html" class="nav-item">
+                <span class="material-icons-round">dashboard</span>
+                <span>Painel</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
