@@ -102,7 +102,7 @@ header {
 
 .profile-icon-link {
     color: var(--text-secondary);
-    transition: color 0.2s;
+    transition: all 0.2s;
     padding: 8px;
     /* Touch target */
     margin-right: -8px;
@@ -110,11 +110,22 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    /* Silencing: No link decoration */
+    border-radius: 50%;
+    /* Silencing: Round hover shape */
 }
 
 .profile-icon-link:hover {
     color: var(--text-primary);
-    /* Neutral hover (White) - Phase 3B Req */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Silencing: Very subtle bg */
+}
+
+.profile-icon-link:focus-visible {
+    outline: 1px solid var(--text-secondary);
+    /* Silencing: Discreet focus */
+    outline-offset: 2px;
 }
 
 /* Override header alignment for Login specific if needed, but 'Este espaço' looks centered.
